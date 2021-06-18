@@ -1,7 +1,12 @@
-import axiosWithAuth from '../helpers/axiosWithAuth';
+import { axiosWithAuth } from '../helpers/axiosWithAuth';
 
-const fetchColorService = () => {
-    
+const mockFetchColors = () => {
+    return axiosWithAuth()
+    .get("/colors")
+    .then(res =>{
+        console.log(res)
+        return res        
+    })
 }
 
-export default fetchColorService;
+export default mockFetchColors;
